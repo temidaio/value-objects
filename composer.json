@@ -1,0 +1,32 @@
+{
+    "name": "olsza/value-objects",
+    "description": "Useful values objects",
+    "keywords": [
+        "olsza",
+        "php",
+        "value object"
+    ],
+    "type": "project",
+    "require": {
+        "php": "^7.0|^8.0",
+        "michael-rubel/laravel-formatters": "dev-main"
+    },
+    "require-dev": {
+        "phpunit/phpunit": "^9.5"
+    },
+    "autoload": {
+        "psr-4": {
+            "Olsza\\ValueObjects\\": "src"
+        }
+    },
+    "license": "MIT",
+    "authors": [
+        {
+            "name": "Olsza",
+            "email": "olsza@users.noreply.github.com",
+            "homepage": "https://olsza.info",
+            "role": "Developer"
+        }
+    ],
+    "minimum-stability": "dev"
+}
