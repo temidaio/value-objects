@@ -13,10 +13,9 @@ class TaxNumber
      * @param string|null $country
      */
     public function __construct(
-        private string  $taxNumber = '',
+        private string $taxNumber = '',
         private ?string $country = ''
-    )
-    {
+    ) {
         $this->separationData($taxNumber, $country ?? '');
     }
 
@@ -30,8 +29,7 @@ class TaxNumber
     public static function make(
         ?string $taxNumber = null,
         ?string $country = null
-    ): TaxNumber
-    {
+    ): TaxNumber {
         return new TaxNumber($taxNumber, $country);
     }
 
@@ -98,8 +96,7 @@ class TaxNumber
     private function separationData(
         string $taxNumber = '',
         string $country = ''
-    ): void
-    {
+    ): void {
         $tempTaxNumber = strtoupper(trim($taxNumber));
         $tempTaxNumber = $this->preFilterTax($tempTaxNumber);
         $country = strtoupper($country);
