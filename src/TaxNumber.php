@@ -12,7 +12,7 @@ class TaxNumber
      * @param string $taxNumber
      * @param string|null $country
      */
-    public function __construct(
+    final public function __construct(
         private string $taxNumber = '',
         private ?string $country = ''
     ) {
@@ -30,7 +30,7 @@ class TaxNumber
         ?string $taxNumber = null,
         ?string $country = null
     ): TaxNumber {
-        return new TaxNumber($taxNumber, $country);
+        return new static($taxNumber, $country);
     }
 
     /**
