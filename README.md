@@ -35,16 +35,16 @@ $taxNumber = new TaxNumber('0123456789', 'pL');
 echo $taxNumber; // PL0123456789
 
 $taxNumber = new TaxNumber('Ab0123456789', 'pL');
-echo $taxNumber; // PLAb0123456789
+echo $taxNumber; // PLAB0123456789
 
 $taxNumber = new TaxNumber('PL 012-345 67.89');
 echo $taxNumber; // PL0123456789
 
 $taxNumber = new TaxNumber('Ab 012-345 67.89', 'uK');
-echo $taxNumber; // UKAb0123456789
-echo $taxNumber->getFullTaxNumber(); // UKAb0123456789
+echo $taxNumber; // UKAB0123456789
+echo $taxNumber->getFullTaxNumber(); // UKAB0123456789
 echo $taxNumber->getCountry(); // UK 
-echo $taxNumber->getTaxNumber();  //Ab0123456789 
+echo $taxNumber->getTaxNumber();  //AB0123456789 
 ```
 
 ## Testing

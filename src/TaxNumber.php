@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace Olsza\ValueObjects;
 
+use MichaelRubel\Formatters\Collection\TaxNumberFormatter;
 use Olsza\ValueObjects\Interfaces\TaxNumberInterface;
 
 class TaxNumber implements TaxNumberInterface
@@ -64,7 +65,7 @@ class TaxNumber implements TaxNumberInterface
      */
     public function getTaxNumber(): ?string
     {
-        return $this->taxNumber;
+        return strtoupper($this->taxNumber);
     }
 
     /**
@@ -99,11 +100,15 @@ class TaxNumber implements TaxNumberInterface
         string $taxNumber = '',
         string $country = ''
     ): void {
-        $tempTaxNumber = strtoupper(trim($taxNumber));
-        $tempTaxNumber = $this->preFilterTax($tempTaxNumber);
+        $tempTaxNumber = $this->preFilterTax($taxNumber, $country);
         $country = strtoupper($country);
-        $tempCountry = substr($tempTaxNumber, 0, 2);
-        $tempNumber = substr($tempTaxNumber, 2);
+        if (strlen($taxNumber) >= 2) {
+            $tempCountry = substr($tempTaxNumber, 0, 2);
+            $tempNumber = substr($tempTaxNumber, 2);
+        } else {
+            $tempNumber = substr($tempTaxNumber, strlen($country));
+            $tempCountry = $country;
+        }
 
         if (empty($country)) {
             $this->setCountry($tempCountry);
@@ -122,14 +127,16 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Filters data about Tax Number.
      *
-     * @param string|null $tempTaxNumber
+     * @param string|null $taxNumber
+     * @param string|null $country
      * @return string
      */
-    private function preFilterTax(?string $tempTaxNumber): string
+    private function preFilterTax(?string $taxNumber, ?string $country = null): string
     {
-        $tempTaxNumber = preg_replace('/[^\d\w]/', '', $tempTaxNumber);
-
-        return (string)$tempTaxNumber;
+        return format(TaxNumberFormatter::class, [
+            'country_iso' => $country,
+            'tax_number'  => $taxNumber,
+        ]);
     }
 
     /**

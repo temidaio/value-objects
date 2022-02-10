@@ -72,12 +72,12 @@ test('tests that are used in the examples in ReadMe', function () {
     $this->assertEquals('PL0123456789', TaxNumber::make('pl0123456789'));
     $this->assertEquals('PL0123456789', TaxNumber::make('PL0123456789', 'pL'));
     $this->assertEquals('PL0123456789', TaxNumber::make('0123456789', 'pL'));
-    $this->assertEquals('PLAb0123456789', TaxNumber::make('Ab0123456789', 'pL'));
+    $this->assertEquals('PLAB0123456789', TaxNumber::make('Ab0123456789', 'pL'));
     $this->assertEquals('PL0123456789', TaxNumber::make('PL 012-345 67.89'));
 
     $multi = TaxNumber::make('Ab 012-345 67.89', 'uK');
-    $this->assertEquals('UKAb0123456789', $multi);
-    $this->assertEquals('UKAb0123456789', $multi->getFullTaxNumber());
+    $this->assertEquals('UKAB0123456789', $multi);
+    $this->assertEquals('UKAB0123456789', $multi->getFullTaxNumber());
     $this->assertEquals('UK', $multi->getCountry());
-    $this->assertEquals('Ab0123456789', $multi->getTaxNumber());
+    $this->assertEquals('AB0123456789', $multi->getTaxNumber());
 });
