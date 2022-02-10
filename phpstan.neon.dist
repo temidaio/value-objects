@@ -5,6 +5,7 @@ parameters:
     level: 4
     paths:
         - src
+        - src/Interfaces
     tmpDir: build/phpstan
     checkOctaneCompatibility: true
     checkModelProperties: true

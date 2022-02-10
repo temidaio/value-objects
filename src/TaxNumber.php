@@ -4,7 +4,9 @@ declare(strict_types=1);
 
 namespace Olsza\ValueObjects;
 
-class TaxNumber
+use Olsza\ValueObjects\Interfaces\TaxNumberInterface;
+
+class TaxNumber implements TaxNumberInterface
 {
     /**
      * Create a new TaxNumber instance.
@@ -12,7 +14,7 @@ class TaxNumber
      * @param string $taxNumber
      * @param string|null $country
      */
-    final public function __construct(
+    public function __construct(
         private string $taxNumber = '',
         private ?string $country = ''
     ) {
