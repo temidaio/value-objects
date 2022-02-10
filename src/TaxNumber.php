@@ -135,7 +135,7 @@ class TaxNumber implements TaxNumberInterface
     {
         return format(TaxNumberFormatter::class, [
             'country_iso' => $country,
-            'tax_number'  => $taxNumber,
+            'tax_number' => $taxNumber,
         ]);
     }
 
