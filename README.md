@@ -26,22 +26,25 @@ use Olsza\ValueObjects\TaxNumber;
 $taxNumber = new TaxNumber('pl0123456789');
 // or Static
 $taxNumber = TaxNumber::make('pl0123456789');
-// PL0123456789
+echo $taxNumber; // PL0123456789
 
 $taxNumber = new TaxNumber('PL0123456789', 'pL');
-// PL0123456789
+echo $taxNumber; // PL0123456789
 
 $taxNumber = new TaxNumber('0123456789', 'pL');
-// PL0123456789
+echo $taxNumber; // PL0123456789
 
 $taxNumber = new TaxNumber('Ab0123456789', 'pL');
-// PLAb0123456789
+echo $taxNumber; // PLAb0123456789
 
 $taxNumber = new TaxNumber('PL 012-345 67.89');
-// PL0123456789
+echo $taxNumber; // PL0123456789
 
-$taxNumber = new TaxNumber('PL 012-345 67.89', 'UK');
-// UKPL0123456789
+$taxNumber = new TaxNumber('Ab 012-345 67.89', 'uK');
+echo $taxNumber; // UKAb0123456789
+echo $taxNumber->getFullTaxNumber(); // UKAb0123456789
+echo $taxNumber->getCountry(); // UK 
+echo $taxNumber->getTaxNumber();  //Ab0123456789 
 ```
 
 ## Testing
