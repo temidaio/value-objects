@@ -6,13 +6,17 @@ namespace Olsza\ValueObjects\Interfaces;
 
 interface TaxNumberInterface
 {
-    public function __construct(
-        string $taxNumber = '',
-        ?string $country = ''
-    );
+    /**
+     * @param string      $tax_number
+     * @param string|null $country
+     */
+    public function __construct(string $tax_number = '', ?string $country = '');
 
-    public static function make(
-        ?string $taxNumber = null,
-        ?string $country = null
-    );
+    /**
+     * @param string|null $tax_number
+     * @param string|null $country
+     *
+     * @return mixed
+     */
+    public static function make(?string $tax_number = null, ?string $country = null): mixed;
 }
