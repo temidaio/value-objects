@@ -9,3 +9,6 @@ parameters:
     checkOctaneCompatibility: true
     checkModelProperties: true
     checkMissingIterableValueType: false
+    ignoreErrors:
+        - '#Property Olsza\\ValueObjects\\TaxNumber\:\:\$tax_number \(string\) does not accept mixed\.#'
+        - '#Method Olsza\\ValueObjects\\TaxNumber\:\:format\(\) should return string but returns mixed\.#'
