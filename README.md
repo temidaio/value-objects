@@ -7,7 +7,7 @@
 
 Contains value objects:
 
-- TaxNumber
+- [TaxNumber](https://github.com/olsza/value-objects/blob/main/src/TaxNumber.php)
 
 
 ## Installation
