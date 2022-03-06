@@ -104,7 +104,7 @@ class TaxNumber implements TaxNumberInterface
     private function transform(): void
     {
         $this->when($this->lengthIsLessOrEqualTwo(), function () {
-            $this->country    = (string) Str::of($this->tax_number)
+            $this->country = (string) Str::of($this->tax_number)
                 ->substr(0, 2)
                 ->upper();
 
@@ -122,7 +122,7 @@ class TaxNumber implements TaxNumberInterface
     {
         return $this->tax_number = format(TaxNumberFormatter::class, [
             'country_iso' => $this->country,
-            'tax_number'  => $this->tax_number,
+            'tax_number' => $this->tax_number,
         ]);
     }
 
