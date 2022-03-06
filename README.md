@@ -60,6 +60,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Credits
 
 - [Olsza](https://github.com/olsza)
+- [Michael Rubel](https://github.com/michael-rubel)
 
 ## License
 
