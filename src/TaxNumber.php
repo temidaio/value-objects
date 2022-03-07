@@ -4,51 +4,58 @@ declare(strict_types=1);
 
 namespace Olsza\ValueObjects;
 
+use Illuminate\Support\Str;
+use Illuminate\Support\Traits\Conditionable;
 use MichaelRubel\Formatters\Collection\TaxNumberFormatter;
 use Olsza\ValueObjects\Interfaces\TaxNumberInterface;
 
 class TaxNumber implements TaxNumberInterface
 {
+    use Conditionable;
+
     /**
      * Create a new TaxNumber instance.
      *
-     * @param string $taxNumber
-     * @param string|null $country
+     * @param string $tax_number
+     * @param string $country
      */
     public function __construct(
-        private string $taxNumber = '',
-        private ?string $country = ''
+        private string $tax_number = '',
+        private string $country = ''
     ) {
-        $this->separationData($taxNumber, $country ?? '');
+        $this->format();
+        $this->transform();
     }
 
     /**
      * Return a new instance of TaxNumber.
      *
-     * @param string|null $taxNumber
-     * @param string|null $country
+     * @param string $tax_number
+     * @param string $country
+     *
      * @return static
      */
     public static function make(
-        ?string $taxNumber = null,
-        ?string $country = null
+        string $tax_number = '',
+        string $country = ''
     ): TaxNumber {
-        return new static($taxNumber, $country);
+        return new static($tax_number, $country);
     }
 
     /**
-     * Set the Tax Number for a given value object.
+     * Set the tax number for a given value object.
      *
-     * @param string $taxNumber
+     * @param string $tax_number
+     *
      * @return void
      */
-    public function setTaxNumber(string $taxNumber): void
+    public function setTaxNumber(string $tax_number): void
     {
-        $this->taxNumber = trim($taxNumber);
+        $this->tax_number = trim($tax_number);
     }
 
     /**
-     * Set the Country for a given value object.
+     * Set the country for a given value object.
      *
      * @param string $country
      * @return void
@@ -59,27 +66,28 @@ class TaxNumber implements TaxNumberInterface
     }
 
     /**
-     * Get a Tax Number for a given value object.
+     * Get the tax number.
      *
      * @return string|null
      */
     public function getTaxNumber(): ?string
     {
-        return strtoupper($this->taxNumber);
+        return Str::upper($this->tax_number);
     }
 
     /**
-     * Get a Country for a given value object.
+     * Get the country prefix.
      *
      * @return string
      */
     public function getCountry(): string
     {
-        return strtoupper($this->country);
+        return Str::upper($this->country);
     }
 
     /**
-     * Get a Full Tax Number for a given value object. Tax Number with prefix Country
+     * Get a full tax number for a given value object.
+     * The tax number with a country prefix.
      *
      * @return string
      */
@@ -89,54 +97,43 @@ class TaxNumber implements TaxNumberInterface
     }
 
     /**
-     * Sets the appropriate data.
-     *
-     * @param string $taxNumber
-     * @param string $country
+     * Transforms the data to appropriate form.
      *
      * @return void
      */
-    private function separationData(
-        string $taxNumber = '',
-        string $country = ''
-    ): void {
-        $tempTaxNumber = $this->preFilterTax($taxNumber, $country);
-        $country = strtoupper($country);
-        if (strlen($taxNumber) >= 2) {
-            $tempCountry = substr($tempTaxNumber, 0, 2);
-            $tempNumber = substr($tempTaxNumber, 2);
-        } else {
-            $tempNumber = substr($tempTaxNumber, strlen($country));
-            $tempCountry = $country;
-        }
+    private function transform(): void
+    {
+        $this->when($this->lengthIsLessOrEqualTwo(), function () {
+            $this->country = (string) Str::of($this->tax_number)
+                ->substr(0, 2)
+                ->upper();
 
-        if (empty($country)) {
-            $this->setCountry($tempCountry);
-            $this->setTaxNumber($tempNumber);
-        } else {
-            $this->setCountry($country);
-
-            if ($tempCountry == $country) {
-                $this->setTaxNumber($tempNumber);
-            } else {
-                $this->setTaxNumber($tempTaxNumber);
-            }
-        }
+            $this->tax_number = (string) Str::of($this->tax_number)
+                ->substr(2);
+        });
     }
 
     /**
-     * Filters data about Tax Number.
+     * Format the tax number.
      *
-     * @param string|null $taxNumber
-     * @param string|null $country
      * @return string
      */
-    private function preFilterTax(?string $taxNumber, ?string $country = null): string
+    private function format(): string
     {
-        return format(TaxNumberFormatter::class, [
-            'country_iso' => $country,
-            'tax_number' => $taxNumber,
+        return $this->tax_number = format(TaxNumberFormatter::class, [
+            'country_iso' => $this->country,
+            'tax_number' => $this->tax_number,
         ]);
+    }
+
+    /**
+     * Check if the tax number length is less or equal two.
+     *
+     * @return bool
+     */
+    private function lengthIsLessOrEqualTwo(): bool
+    {
+        return strlen($this->tax_number) >= 2;
     }
 
     /**
