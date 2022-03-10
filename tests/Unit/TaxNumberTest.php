@@ -81,3 +81,75 @@ test('tests that are used in the examples in ReadMe', function () {
     $this->assertEquals('UK', $multi->getCountry());
     $this->assertEquals('AB0123456789', $multi->getTaxNumber());
 });
+
+test('passed null values to value object', function () {
+    $data = new TaxNumber(null, null);
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = (new TaxNumber(null, null))
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+
+    $data = TaxNumber::make(null, null);
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = TaxNumber::make(null, null)
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+});
+
+test('passed empty values to value object', function () {
+    $data = new TaxNumber('', '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = (new TaxNumber('', ''))
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+
+    $data = TaxNumber::make('', '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = TaxNumber::make('', '')
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+});
+
+test('passed empty tax number and null country', function () {
+    $data = new TaxNumber('', null);
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = (new TaxNumber('', null))
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+
+    $data = TaxNumber::make('', null);
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = TaxNumber::make('', null)
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+});
+
+test('passed null tax number and empty country', function () {
+    $data = new TaxNumber(null, '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = (new TaxNumber(null, ''))
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+
+    $data = TaxNumber::make(null, '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = TaxNumber::make(null, '')
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+});

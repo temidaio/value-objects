@@ -24,27 +24,29 @@ composer require olsza/value-objects
 use Olsza\ValueObjects\TaxNumber;
 
 $taxNumber = new TaxNumber('pl0123456789');
-// or Static
+
+// Or call the object statically:
 $taxNumber = TaxNumber::make('pl0123456789');
-echo $taxNumber; // PL0123456789
+// PL0123456789
 
 $taxNumber = new TaxNumber('PL0123456789', 'pL');
-echo $taxNumber; // PL0123456789
+// PL0123456789
 
 $taxNumber = new TaxNumber('0123456789', 'pL');
-echo $taxNumber; // PL0123456789
+// PL0123456789
 
 $taxNumber = new TaxNumber('Ab0123456789', 'pL');
-echo $taxNumber; // PLAB0123456789
+// PLAB0123456789
 
 $taxNumber = new TaxNumber('PL 012-345 67.89');
-echo $taxNumber; // PL0123456789
+// PL0123456789
 
 $taxNumber = new TaxNumber('Ab 012-345 67.89', 'uK');
-echo $taxNumber; // UKAB0123456789
-echo $taxNumber->getFullTaxNumber(); // UKAB0123456789
-echo $taxNumber->getCountry(); // UK 
-echo $taxNumber->getTaxNumber();  //AB0123456789 
+// UKAB0123456789
+
+$taxNumber->getFullTaxNumber(); // UKAB0123456789
+$taxNumber->getCountry(); // UK 
+$taxNumber->getTaxNumber();  // AB0123456789 
 ```
 
 ## Testing

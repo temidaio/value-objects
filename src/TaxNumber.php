@@ -16,12 +16,12 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Create a new TaxNumber instance.
      *
-     * @param string $tax_number
-     * @param string $country
+     * @param string|null $tax_number
+     * @param string|null $country
      */
     public function __construct(
-        private string $tax_number = '',
-        private string $country = ''
+        private ?string $tax_number = null,
+        private ?string $country = null
     ) {
         $this->format();
         $this->transform();
@@ -30,14 +30,14 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Return a new instance of TaxNumber.
      *
-     * @param string $tax_number
-     * @param string $country
+     * @param string|null $tax_number
+     * @param string|null $country
      *
      * @return static
      */
     public static function make(
-        string $tax_number = '',
-        string $country = ''
+        ?string $tax_number = null,
+        ?string $country = null
     ): TaxNumber {
         return new static($tax_number, $country);
     }
@@ -72,7 +72,7 @@ class TaxNumber implements TaxNumberInterface
      */
     public function getTaxNumber(): ?string
     {
-        return Str::upper($this->tax_number);
+        return Str::upper($this->tax_number ?? '');
     }
 
     /**
@@ -82,7 +82,7 @@ class TaxNumber implements TaxNumberInterface
      */
     public function getCountry(): string
     {
-        return Str::upper($this->country);
+        return Str::upper($this->country ?? '');
     }
 
     /**
@@ -104,11 +104,11 @@ class TaxNumber implements TaxNumberInterface
     private function transform(): void
     {
         $this->when($this->lengthIsLessOrEqualTwo(), function () {
-            $this->country = (string) Str::of($this->tax_number)
+            $this->country = (string) Str::of($this->tax_number ?? '')
                 ->substr(0, 2)
                 ->upper();
 
-            $this->tax_number = (string) Str::of($this->tax_number)
+            $this->tax_number = (string) Str::of($this->tax_number ?? '')
                 ->substr(2);
         });
     }
@@ -133,7 +133,7 @@ class TaxNumber implements TaxNumberInterface
      */
     private function lengthIsLessOrEqualTwo(): bool
     {
-        return strlen($this->tax_number) >= 2;
+        return strlen($this->tax_number ?? '') >= 2;
     }
 
     /**
