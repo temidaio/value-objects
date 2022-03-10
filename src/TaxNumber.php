@@ -16,12 +16,12 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Create a new TaxNumber instance.
      *
-     * @param string $tax_number
-     * @param string $country
+     * @param string|null $tax_number
+     * @param string|null $country
      */
     public function __construct(
-        private string $tax_number = '',
-        private string $country = ''
+        private ?string $tax_number = null,
+        private ?string $country = null
     ) {
         $this->format();
         $this->transform();
@@ -30,14 +30,14 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Return a new instance of TaxNumber.
      *
-     * @param string $tax_number
-     * @param string $country
+     * @param string|null $tax_number
+     * @param string|null $country
      *
      * @return static
      */
     public static function make(
-        string $tax_number = '',
-        string $country = ''
+        ?string $tax_number = null,
+        ?string $country = null
     ): TaxNumber {
         return new static($tax_number, $country);
     }
