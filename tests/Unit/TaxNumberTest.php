@@ -135,3 +135,21 @@ test('passed empty tax number and null country', function () {
         ->getFullTaxNumber();
     $this->assertEquals('', $data);
 });
+
+test('passed null tax number and empty country', function () {
+    $data = new TaxNumber(null, '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = (new TaxNumber(null, ''))
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+
+    $data = TaxNumber::make(null, '');
+    $this->assertEquals('', $data->getCountry());
+    $this->assertEquals('', $data->getTaxNumber());
+
+    $data = TaxNumber::make(null, '')
+        ->getFullTaxNumber();
+    $this->assertEquals('', $data);
+});
