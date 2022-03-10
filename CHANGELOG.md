@@ -2,6 +2,14 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## 0.4.0 - 2022-03-10
+
+## What's Changed
+
+- Allow nullable values by @michael-rubel in https://github.com/olsza/value-objects/pull/6
+
+**Full Changelog**: https://github.com/olsza/value-objects/compare/0.3.5...0.4.0
+
 ## 0.3.5 - 2022-03-07
 
 ## What's Changed
