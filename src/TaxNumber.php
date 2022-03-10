@@ -72,7 +72,7 @@ class TaxNumber implements TaxNumberInterface
      */
     public function getTaxNumber(): ?string
     {
-        return Str::upper($this->tax_number);
+        return Str::upper($this->tax_number ?? '');
     }
 
     /**
@@ -82,7 +82,7 @@ class TaxNumber implements TaxNumberInterface
      */
     public function getCountry(): string
     {
-        return Str::upper($this->country);
+        return Str::upper($this->country ?? '');
     }
 
     /**
@@ -104,11 +104,11 @@ class TaxNumber implements TaxNumberInterface
     private function transform(): void
     {
         $this->when($this->lengthIsLessOrEqualTwo(), function () {
-            $this->country = (string) Str::of($this->tax_number)
+            $this->country = (string) Str::of($this->tax_number ?? '')
                 ->substr(0, 2)
                 ->upper();
 
-            $this->tax_number = (string) Str::of($this->tax_number)
+            $this->tax_number = (string) Str::of($this->tax_number ?? '')
                 ->substr(2);
         });
     }
@@ -133,7 +133,7 @@ class TaxNumber implements TaxNumberInterface
      */
     private function lengthIsLessOrEqualTwo(): bool
     {
-        return strlen($this->tax_number) >= 2;
+        return strlen($this->tax_number ?? '') >= 2;
     }
 
     /**
