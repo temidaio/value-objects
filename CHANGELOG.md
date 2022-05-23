@@ -2,6 +2,15 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## 0.5.0 - 2022-05-23
+
+## What's Changed
+
+- Bump dependabot/fetch-metadata from 1.3.0 to 1.3.1 by @dependabot in https://github.com/olsza/value-objects/pull/7
+- Upgrade package by @michael-rubel in https://github.com/olsza/value-objects/pull/8
+
+**Full Changelog**: https://github.com/olsza/value-objects/compare/0.4.0...0.5.0
+
 ## 0.4.0 - 2022-03-10
 
 ## What's Changed
