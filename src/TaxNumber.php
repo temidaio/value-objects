@@ -43,29 +43,6 @@ class TaxNumber implements TaxNumberInterface
     }
 
     /**
-     * Set the tax number for a given value object.
-     *
-     * @param string $tax_number
-     *
-     * @return void
-     */
-    public function setTaxNumber(string $tax_number): void
-    {
-        $this->tax_number = trim($tax_number);
-    }
-
-    /**
-     * Set the country for a given value object.
-     *
-     * @param string $country
-     * @return void
-     */
-    public function setCountry(string $country): void
-    {
-        $this->country = $country;
-    }
-
-    /**
      * Get the tax number.
      *
      * @return string|null
@@ -116,14 +93,11 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Format the tax number.
      *
-     * @return string
+     * @return void
      */
-    private function format(): string
+    private function format(): void
     {
-        return $this->tax_number = format(TaxNumberFormatter::class, [
-            'country_iso' => $this->country,
-            'tax_number' => $this->tax_number,
-        ]);
+        $this->tax_number = format(TaxNumberFormatter::class, $this->tax_number, $this->country);
     }
 
     /**

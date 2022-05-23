@@ -1,5 +1,5 @@
 includes:
-    - phpstan-baseline.neon
+    - ./vendor/nunomaduro/larastan/extension.neon
 
 parameters:
     level: max
@@ -10,5 +10,4 @@ parameters:
     checkModelProperties: true
     checkMissingIterableValueType: false
     ignoreErrors:
-        - '#Method Olsza\\ValueObjects\\TaxNumber\:\:format\(\) should return string but returns mixed\.#'
         - '#Property Olsza\\ValueObjects\\TaxNumber\:\:\$tax_number \(string\|null\) does not accept mixed\.#'
