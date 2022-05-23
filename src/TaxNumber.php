@@ -116,14 +116,11 @@ class TaxNumber implements TaxNumberInterface
     /**
      * Format the tax number.
      *
-     * @return string
+     * @return void
      */
-    private function format(): string
+    private function format(): void
     {
-        return $this->tax_number = format(TaxNumberFormatter::class, [
-            'country_iso' => $this->country,
-            'tax_number' => $this->tax_number,
-        ]);
+        $this->tax_number = format(TaxNumberFormatter::class, $this->tax_number, $this->country);
     }
 
     /**
