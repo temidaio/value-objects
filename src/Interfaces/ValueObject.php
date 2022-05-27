@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace Olsza\ValueObjects\Interfaces;
 
-interface TaxNumberInterface
+interface ValueObject
 {
     /**
      * @param string|null $tax_number

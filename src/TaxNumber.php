@@ -7,9 +7,9 @@ namespace Olsza\ValueObjects;
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
 use MichaelRubel\Formatters\Collection\TaxNumberFormatter;
-use Olsza\ValueObjects\Interfaces\TaxNumberInterface;
+use Olsza\ValueObjects\Interfaces\ValueObject;
 
-class TaxNumber implements TaxNumberInterface
+class TaxNumber implements ValueObject
 {
     use Conditionable;
 
