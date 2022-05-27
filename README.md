@@ -18,7 +18,7 @@ You can install the package via composer:
 composer require olsza/value-objects
 ```
 
-### Available Value Objects
+## Available Value Objects
 - [TaxNumber](https://github.com/olsza/value-objects/blob/main/src/Complex/TaxNumber.php)
 - [Uuid](https://github.com/olsza/value-objects/blob/main/src/Complex/Uuid.php)
 
