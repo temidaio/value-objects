@@ -40,6 +40,7 @@ class UuidTest extends TestCase
         $object->add($uuid, 'any_other_model');
         $object->add($uuid, 'any_other_key');
 
+        dd($object);
         $this->assertIsArray($object->uuids);
         $this->assertArrayHasKey('verification', $object->uuids);
         $this->assertArrayHasKey('any_other_model', $object->uuids);

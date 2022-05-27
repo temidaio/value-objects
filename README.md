@@ -18,36 +18,13 @@ You can install the package via composer:
 composer require olsza/value-objects
 ```
 
+### Available Value Objects
+- [TaxNumber](https://github.com/olsza/value-objects/blob/main/src/Complex/TaxNumber.php)
+- [Uuid](https://github.com/olsza/value-objects/blob/main/src/Complex/Uuid.php)
+
 ## Usage
 
-```php
-use Olsza\ValueObjects\Complex\TaxNumber;
-
-$taxNumber = new TaxNumber('pl0123456789');
-
-// Or call the object statically:
-$taxNumber = TaxNumber::make('pl0123456789');
-// PL0123456789
-
-$taxNumber = new TaxNumber('PL0123456789', 'pL');
-// PL0123456789
-
-$taxNumber = new TaxNumber('0123456789', 'pL');
-// PL0123456789
-
-$taxNumber = new TaxNumber('Ab0123456789', 'pL');
-// PLAB0123456789
-
-$taxNumber = new TaxNumber('PL 012-345 67.89');
-// PL0123456789
-
-$taxNumber = new TaxNumber('Ab 012-345 67.89', 'uK');
-// UKAB0123456789
-
-$taxNumber->getFullTaxNumber(); // UKAB0123456789
-$taxNumber->getCountry(); // UK 
-$taxNumber->getTaxNumber();  // AB0123456789 
-```
+See the examples [here](https://github.com/olsza/value-objects/blob/main/docs/examples.md).
 
 ## Testing
 
@@ -62,7 +39,7 @@ Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed re
 ## Credits
 
 - [Olsza](https://github.com/olsza)
-- [Michael Rubel](https://github.com/michael-rubel)
+- [Michael Rubél](https://github.com/michael-rubel)
 
 ## License
 
