@@ -50,7 +50,7 @@ class Uuid implements ValueObject
      * @param string $uuid
      * @param string $name
      *
-     * @return Uuid
+     * @return static
      * @throws \Exception
      */
     public function add(string $uuid, string $name): static
@@ -93,6 +93,6 @@ class Uuid implements ValueObject
      */
     public function __toString(): string
     {
-        return $this->first();
+        return $this->first() ?? '';
     }
 }

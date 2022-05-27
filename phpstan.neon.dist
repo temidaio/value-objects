@@ -11,3 +11,4 @@ parameters:
     checkMissingIterableValueType: false
     ignoreErrors:
         - '#Property Olsza\\ValueObjects\\Complex\\TaxNumber\:\:\$tax_number \(string\|null\) does not accept mixed\.#'
+        - '#Property Olsza\\ValueObjects\\Exceptions\\InvalidUuidException\:\:\$message has no type specified\.#'
