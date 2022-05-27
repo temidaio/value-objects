@@ -2,6 +2,12 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v1.0.1 - 2022-05-27
+
+### What's changed
+
+- Fixed [issue](https://github.com/olsza/value-objects/commit/2f2c1c0ff5eb1e5210dd2fa2d84cab5102f8e0dc) with country code casting in TaxNumber VO.
+
 ## v1.0.0 - 2022-05-27
 
 ### Initial release
