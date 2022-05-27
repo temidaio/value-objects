@@ -2,13 +2,13 @@
 
 declare(strict_types=1);
 
-namespace Olsza\ValueObjects;
+namespace Olsza\ValueObjects\Complex;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
 use Illuminate\Support\Traits\Macroable;
 use MichaelRubel\Formatters\Collection\TaxNumberFormatter;
-use Olsza\ValueObjects\Interfaces\ValueObject;
+use Olsza\ValueObjects\ValueObject;
 
 class TaxNumber implements ValueObject
 {

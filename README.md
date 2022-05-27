@@ -21,7 +21,7 @@ composer require olsza/value-objects
 ## Usage
 
 ```php
-use Olsza\ValueObjects\TaxNumber;
+use Olsza\ValueObjects\Complex\TaxNumber;
 
 $taxNumber = new TaxNumber('pl0123456789');
 

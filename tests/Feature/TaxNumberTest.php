@@ -2,7 +2,7 @@
 
 namespace Olsza\ValueObjects\Tests\Feature;
 
-use Olsza\ValueObjects\TaxNumber;
+use Olsza\ValueObjects\Complex\TaxNumber;
 use Olsza\ValueObjects\Tests\TestCase;
 
 class TaxNumberTest extends TestCase
