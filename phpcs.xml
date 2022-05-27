@@ -44,6 +44,7 @@
        The following tags are equivalent to the command line arguments:
        -p
     -->
+    <arg name="standard" value="PSR2"/>
     <arg name="report" value="full"/>
     <arg name="colors"/>
     <arg value="p"/>
