@@ -13,6 +13,7 @@
     "type": "project",
     "require": {
         "php": "^8.0|^8.1",
+        "illuminate/support": "^8.0|^9.0",
         "michael-rubel/laravel-formatters": "^4.0.1"
     },
     "require-dev": {
