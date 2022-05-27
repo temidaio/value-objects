@@ -46,9 +46,9 @@ class TaxNumber implements ValueObject
     /**
      * Get the tax number.
      *
-     * @return string|null
+     * @return string
      */
-    public function getTaxNumber(): ?string
+    public function getTaxNumber(): string
     {
         return Str::upper($this->tax_number ?? '');
     }
