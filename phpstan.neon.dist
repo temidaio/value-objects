@@ -10,4 +10,4 @@ parameters:
     checkModelProperties: true
     checkMissingIterableValueType: false
     ignoreErrors:
-        - '#Property Olsza\\ValueObjects\\TaxNumber\:\:\$tax_number \(string\|null\) does not accept mixed\.#'
+        - '#Property Olsza\\ValueObjects\\Complex\\TaxNumber\:\:\$tax_number \(string\|null\) does not accept mixed\.#'

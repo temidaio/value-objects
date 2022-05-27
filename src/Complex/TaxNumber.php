@@ -20,9 +20,9 @@ class TaxNumber implements ValueObject
      * @param string|null $tax_number
      * @param string|null $country
      */
-    public function __construct(
-        private ?string $tax_number = null,
-        private ?string $country = null
+    final public function __construct(
+        public ?string $tax_number = null,
+        public ?string $country = null
     ) {
         $this->format();
         $this->transform();
@@ -79,7 +79,7 @@ class TaxNumber implements ValueObject
      *
      * @return void
      */
-    private function transform(): void
+    protected function transform(): void
     {
         $this->when($this->lengthIsLessOrEqualTwo(), function () {
             $this->country = (string) Str::of($this->tax_number ?? '')
@@ -96,7 +96,7 @@ class TaxNumber implements ValueObject
      *
      * @return void
      */
-    private function format(): void
+    protected function format(): void
     {
         $this->tax_number = format(TaxNumberFormatter::class, $this->tax_number, $this->country);
     }
@@ -106,7 +106,7 @@ class TaxNumber implements ValueObject
      *
      * @return bool
      */
-    private function lengthIsLessOrEqualTwo(): bool
+    protected function lengthIsLessOrEqualTwo(): bool
     {
         return strlen($this->tax_number ?? '') >= 2;
     }
