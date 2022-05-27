@@ -108,7 +108,7 @@ class TaxNumber implements ValueObject
      *
      * @return bool
      */
-    private function isWithCountry(): bool
+    protected function isWithCountry(): bool
     {
         return strlen($this->tax_number ?? '') >= 2
             && ! is_numeric($this->tax_number);
