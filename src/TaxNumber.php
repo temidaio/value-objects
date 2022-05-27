@@ -6,12 +6,13 @@ namespace Olsza\ValueObjects;
 
 use Illuminate\Support\Str;
 use Illuminate\Support\Traits\Conditionable;
+use Illuminate\Support\Traits\Macroable;
 use MichaelRubel\Formatters\Collection\TaxNumberFormatter;
 use Olsza\ValueObjects\Interfaces\ValueObject;
 
 class TaxNumber implements ValueObject
 {
-    use Conditionable;
+    use Macroable, Conditionable;
 
     /**
      * Create a new TaxNumber instance.
