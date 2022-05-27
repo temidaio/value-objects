@@ -2,6 +2,13 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v1.0.0 - 2022-05-27
+
+### Initial release
+
+- Added `Uuid` value object;
+- Package structure refactoring;
+
 ## 0.5.0 - 2022-05-23
 
 ## What's Changed
