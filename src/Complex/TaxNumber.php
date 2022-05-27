@@ -81,12 +81,14 @@ class TaxNumber implements ValueObject
      */
     protected function transform(): void
     {
-        $this->when($this->lengthIsLessOrEqualTwo(), function () {
-            $this->country = (string) Str::of($this->tax_number ?? '')
+        $this->when($this->isWithCountry(), function () {
+            $stringable = Str::of($this->tax_number ?? '');
+
+            $this->country = (string) $stringable
                 ->substr(0, 2)
                 ->upper();
 
-            $this->tax_number = (string) Str::of($this->tax_number ?? '')
+            $this->tax_number = (string) $stringable
                 ->substr(2);
         });
     }
@@ -106,9 +108,10 @@ class TaxNumber implements ValueObject
      *
      * @return bool
      */
-    protected function lengthIsLessOrEqualTwo(): bool
+    private function isWithCountry(): bool
     {
-        return strlen($this->tax_number ?? '') >= 2;
+        return strlen($this->tax_number ?? '') >= 2
+            && ! is_numeric($this->tax_number);
     }
 
     /**

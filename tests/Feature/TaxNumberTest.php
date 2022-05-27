@@ -35,8 +35,8 @@ class TaxNumberTest extends TestCase
     public function testDataInTaxNumberIsNumberNotPrefixCountryIsNull()
     {
         $data = new TaxNumber('1234567890');
-        $this->assertEquals('12', $data->getCountry());
-        $this->assertEquals('34567890', $data->getTaxNumber());
+        $this->assertEquals('', $data->getCountry());
+        $this->assertEquals('1234567890', $data->getTaxNumber());
     }
 
     /** @test */
