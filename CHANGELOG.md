@@ -2,6 +2,12 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v1.0.2 - 2022-05-30
+
+### Whats' changed
+
+**Full Changelog**: https://github.com/olsza/value-objects/compare/1.0.1...1.0.2
+
 ## v1.0.1 - 2022-05-27
 
 ### What's changed
