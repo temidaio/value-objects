@@ -20,8 +20,6 @@ class Uuid implements ValueObject
      *
      * @param string $uuid
      * @param string $name
-     *
-     * @throws \Exception
      */
     final public function __construct(string $uuid, string $name)
     {
@@ -35,7 +33,6 @@ class Uuid implements ValueObject
      * @param string $name
      *
      * @return static
-     * @throws \Exception
      */
     public static function make(
         string $uuid,
