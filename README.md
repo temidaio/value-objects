@@ -5,11 +5,6 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/olsza/value-objects/Check%20&%20fix%20styling?label=code%20style)](https://github.com/olsza/value-objects/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/olsza/value-objects.svg?style=flat-square)](https://packagist.org/packages/olsza/value-objects)
 
-Contains value objects:
-
-- [TaxNumber](https://github.com/olsza/value-objects/blob/main/src/Complex/TaxNumber.php)
-
-
 ## Installation
 
 You can install the package via composer:
