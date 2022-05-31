@@ -2,6 +2,23 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v2.0.0 - 2022-05-31
+
+### Added
+
+- [Address VO](https://github.com/olsza/laravel-value-objects/blob/main/src/Custom/Address.php)
+- [City VO](https://github.com/olsza/laravel-value-objects/blob/main/src/Custom/City.php)
+- [Country VO](https://github.com/olsza/laravel-value-objects/blob/main/src/Custom/Country.php)
+- [PostCode VO](https://github.com/olsza/laravel-value-objects/blob/main/src/Custom/PostCode.php)
+- [Street VO](https://github.com/olsza/laravel-value-objects/blob/main/src/Custom/Street.php)
+- [Address Formatter](https://github.com/olsza/laravel-value-objects/blob/main/src/Formatters/AddressFormatter.php)
+- [Country Formatter](https://github.com/olsza/laravel-value-objects/blob/main/src/Formatters/CountryFormatter.php)
+- [Street Formatter](https://github.com/olsza/laravel-value-objects/blob/main/src/Formatters/StreetFormatter.php)
+
+### Changed
+
+- New required version of Laravel is `^9.7`
+
 ## v1.0.2 - 2022-05-30
 
 ### Whats' changed
