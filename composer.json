@@ -1,6 +1,6 @@
 {
-    "name": "olsza/value-objects",
-    "description": "Useful values objects",
+    "name": "olsza/laravel-value-objects",
+    "description": "Useful values objects for Laravel",
     "keywords": [
         "olsza",
         "php",
