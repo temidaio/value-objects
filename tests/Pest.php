@@ -16,7 +16,6 @@ use Illuminate\Support\Facades\Http;
 use Olsza\ValueObjects\Tests\TestCase;
 
 uses(TestCase::class)
-    ->beforeEach(fn () => Http::preventStrayRequests())
     ->in('Feature');
 
 /*
