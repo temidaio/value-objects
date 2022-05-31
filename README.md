@@ -5,6 +5,9 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/olsza/laravel-value-objects/Check%20&%20fix%20styling?label=code%20style)](https://github.com/olsza/laravel-value-objects/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/olsza/laravel-value-objects.svg?style=flat-square)](https://packagist.org/packages/olsza/laravel-value-objects)
 
+A bunch of value objects for Laravel.
+Laravel `^9.7` is required to use this package.
+
 ## Installation
 
 You can install the package via composer:
