@@ -12,3 +12,6 @@ parameters:
     ignoreErrors:
         - '#Property Olsza\\ValueObjects\\Complex\\TaxNumber\:\:\$tax_number \(string\|null\) does not accept mixed\.#'
         - '#Property Olsza\\ValueObjects\\Exceptions\\InvalidUuidException\:\:\$message has no type specified\.#'
+        - '#Parameter \#1 \$callback of method Illuminate\\Support\\Collection\<\(int\|string\),mixed\>\:\:each\(\) expects callable\(mixed, \(int\|string\)\)\: bool\|void, Closure\(mixed, mixed\)\: string\|true\|null given\.#'
+        - '#(.*)does not accept mixed.#'
+        - '#(.*)returns mixed.#'
