@@ -26,6 +26,10 @@ class ClassString implements ValueObject
      */
     final public function __construct(protected ?string $classString = null)
     {
+        if (is_null($this->classString)) {
+            return;
+        }
+
         if (! str_contains($classString, '\\')) {
             throw new InvalidClassStringException;
         }

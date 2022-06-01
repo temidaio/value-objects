@@ -10,6 +10,10 @@ test('class string fails if not proper format', function () {
     new ClassString('Test');
 })->expectException(InvalidClassStringException::class);
 
+test('class string is empty string', function () {
+    new ClassString('');
+})->expectException(InvalidClassStringException::class);
+
 test('can get class string', function () {
     $classString = new ClassString('My\Test\Class');
 
@@ -37,3 +41,19 @@ test('class string is interface & exists but class dont', function () {
     assertTrue($classString->isInterfaceExists());
 });
 
+test('can cast class string to string', function () {
+    $classString = new ClassString(ClassString::class);
+
+    assertSame('Olsza\ValueObjects\Complex\ClassString', (string) $classString);
+});
+
+test('class string is null', function () {
+    $classString = new ClassString();
+    assertSame(null, $classString->getClassString());
+
+    $classString = new ClassString(null);
+    assertSame(null, $classString->getClassString());
+
+    $classString = new ClassString(null);
+    assertSame('', (string) $classString);
+});
