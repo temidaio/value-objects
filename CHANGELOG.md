@@ -2,6 +2,14 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v2.1.0 - 2022-06-01
+
+### What's changed
+
+- Added [Name](https://github.com/olsza/laravel-value-objects/blob/main/src/Complex/Name.php) value object and its [formatter](https://github.com/olsza/laravel-value-objects/blob/main/src/Formatters/NameFormatter.php).
+
+**Full Changelog**: https://github.com/olsza/laravel-value-objects/compare/2.0.0...2.1.0
+
 ## v2.0.0 - 2022-05-31
 
 ### Added
