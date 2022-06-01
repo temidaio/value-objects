@@ -37,7 +37,7 @@ class Uuid implements ValueObject
     public static function make(
         string $uuid,
         string $name,
-    ): Uuid {
+    ): static {
         return new static($uuid, $name);
     }
 

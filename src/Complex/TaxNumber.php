@@ -39,7 +39,7 @@ class TaxNumber implements ValueObject
     public static function make(
         ?string $tax_number = null,
         ?string $country = null
-    ): TaxNumber {
+    ): static {
         return new static($tax_number, $country);
     }
 
