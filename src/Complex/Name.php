@@ -11,7 +11,7 @@ use Olsza\ValueObjects\ValueObject;
 class Name implements ValueObject
 {
     /**
-     * Create a new Uuid instance.
+     * Create a new value object instance.
      *
      * @param string|null $first_name
      * @param string|null $last_name

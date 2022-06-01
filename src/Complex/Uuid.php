@@ -16,7 +16,7 @@ class Uuid implements ValueObject
     public array $uuids = [];
 
     /**
-     * Create a new Uuid instance.
+     * Create a new value object instance.
      *
      * @param string $uuid
      * @param string $name

@@ -15,7 +15,7 @@ class TaxNumber implements ValueObject
     use Macroable, Conditionable;
 
     /**
-     * Create a new TaxNumber instance.
+     * Create a new value object instance.
      *
      * @param string|null $tax_number
      * @param string|null $country
