@@ -77,6 +77,6 @@ class Name implements ValueObject
      */
     public function __toString(): string
     {
-        return $this->getFullName();
+        return $this->getFullName() ?? '';
     }
 }
