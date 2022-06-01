@@ -2,6 +2,12 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v2.2.0 - 2022-06-01
+
+- Added [ClassString](https://github.com/olsza/laravel-value-objects/blob/main/src/Complex/ClassString.php) value object.
+
+**Full Changelog**: https://github.com/olsza/laravel-value-objects/compare/2.1.0...2.2.0
+
 ## v2.1.0 - 2022-06-01
 
 ### What's changed
