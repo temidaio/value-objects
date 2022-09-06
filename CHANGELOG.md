@@ -2,6 +2,14 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v2.3.0 - 2022-09-06
+
+### What's Changed
+
+- Bump dependabot/fetch-metadata from 1.3.1 to 1.3.3 by @dependabot in https://github.com/olsza/laravel-value-objects/pull/9
+
+**Full Changelog**: https://github.com/olsza/laravel-value-objects/compare/2.2.0...2.3.0
+
 ## v2.2.0 - 2022-06-01
 
 - Added [ClassString](https://github.com/olsza/laravel-value-objects/blob/main/src/Complex/ClassString.php) value object.
