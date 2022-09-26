@@ -2,6 +2,10 @@
 
 All notable changes to `Value Objects` will be documented in this file.
 
+## v2.3.1 - 2022-09-26
+
+**Full Changelog**: https://github.com/olsza/laravel-value-objects/compare/2.3.0...2.3.1
+
 ## v2.3.0 - 2022-09-06
 
 ### What's Changed
