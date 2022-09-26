@@ -14,7 +14,7 @@
     "require": {
         "php": "^8.0|^8.1",
         "illuminate/support": "^9.7",
-        "michael-rubel/laravel-formatters": "^4.0.1|^5.0"
+        "michael-rubel/laravel-formatters": "^4.0.1|^5.0|^6.0"
     },
     "require-dev": {
         "nunomaduro/collision": "^5.10|^6.0",
