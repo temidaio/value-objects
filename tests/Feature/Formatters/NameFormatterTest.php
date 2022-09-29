@@ -1,8 +1,8 @@
 <?php
 
-namespace Olsza\ValueObjects\Tests\Feature\ValueObjects;
+namespace Temidaio\ValueObjects\Tests\Feature\ValueObjects;
 
-use Olsza\ValueObjects\Formatters\NameFormatter;
+use Temidaio\ValueObjects\Formatters\NameFormatter;
 
 test('can format first name', function () {
     $name = format(NameFormatter::class, 'michael');

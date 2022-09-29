@@ -2,13 +2,13 @@
 
 declare(strict_types = 1);
 
-namespace Olsza\ValueObjects\Custom;
+namespace Temidaio\ValueObjects;
 
 use Illuminate\Support\Str;
-use Olsza\ValueObjects\Formatters\CountryFormatter;
-use Olsza\ValueObjects\ValueObject;
+use MichaelRubel\ValueObjects\ValueObject;
+use Temidaio\ValueObjects\Formatters\CountryFormatter;
 
-class Country implements ValueObject
+class Country extends ValueObject
 {
     /**
      * Internal properties.
@@ -33,15 +33,11 @@ class Country implements ValueObject
     }
 
     /**
-     * Make the new Value Object.
-     *
-     * @param array|null $data
-     *
-     * @return static
+     * @return string
      */
-    public static function make(?array $data): static
+    public function value(): string
     {
-        return new static($data);
+        return $this->format();
     }
 
     /**
@@ -82,38 +78,12 @@ class Country implements ValueObject
     }
 
     /**
-     * Get the internal property.
-     *
-     * @param string $name
-     *
-     * @return string|null
-     */
-    public function __get(string $name): ?string
-    {
-        return $this->{$name};
-    }
-
-    /**
-     * Set the internal property.
-     *
-     * @param string $name
-     * @param mixed $value
-     */
-    public function __set(string $name, mixed $value): void
-    {
-        $this->{$name} = format(
-            CountryFormatter::class,
-            [$name => $value]
-        );
-    }
-
-    /**
      * Cast the object to string.
      *
      * @return string
      */
     public function __toString(): string
     {
-        return $this->format();
+        return $this->value();
     }
 }

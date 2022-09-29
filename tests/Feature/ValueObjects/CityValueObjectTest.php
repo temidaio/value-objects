@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-use Olsza\ValueObjects\Custom\City;
+use Temidaio\ValueObjects\City;
 
 test('all city data provided as string returning city name', function() {
     $data = new City([
@@ -56,13 +56,11 @@ test('city name property retrieved and returned as string', function() {
     expect($data->city)->toEqual('kr');
 });
 
-test('city name property set individually and returned as string', function() {
+test('city nobject is immutable', function() {
     $data = new City([
         'city'         => 'kr',
         'country_code' => 'pl',
     ]);
 
     $data->city = 'waw';
-
-    expect($data->city)->toEqual('waw');
-});
+})->expectException(\InvalidArgumentException::class);

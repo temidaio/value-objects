@@ -2,27 +2,27 @@
 
 declare(strict_types=1);
 
-namespace Olsza\ValueObjects\Custom;
+namespace Temidaio\ValueObjects;
 
 use Illuminate\Support\Str;
-use Olsza\ValueObjects\ValueObject;
+use MichaelRubel\ValueObjects\ValueObject;
 
-class PostCode implements ValueObject
+class PostCode extends ValueObject
 {
     /**
      * @var string|null
      */
-    public ?string $postcode = null;
+    protected ?string $postcode = null;
 
     /**
      * @var City|null
      */
-    public ?City $city = null;
+    protected ?City $city = null;
 
     /**
      * @var Country|null
      */
-    public ?Country $country = null;
+    protected ?Country $country = null;
 
     /**
      * @param array|null $data
@@ -45,15 +45,11 @@ class PostCode implements ValueObject
     }
 
     /**
-     * Make the new Value Object.
-     *
-     * @param array|null $data
-     *
-     * @return static
+     * @return string
      */
-    public static function make(?array $data): static
+    public function value(): string
     {
-        return new static($data);
+        return $this->postcode ?? '';
     }
 
     /**
@@ -73,6 +69,6 @@ class PostCode implements ValueObject
      */
     public function __toString(): string
     {
-        return $this->postcode ?? '';
+        return $this->value();
     }
 }

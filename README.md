@@ -5,24 +5,19 @@
 [![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/olsza/laravel-value-objects/Check%20&%20fix%20styling?label=code%20style)](https://github.com/olsza/laravel-value-objects/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
 [![Total Downloads](https://img.shields.io/packagist/dt/olsza/laravel-value-objects.svg?style=flat-square)](https://packagist.org/packages/olsza/laravel-value-objects)
 
-A bunch of value objects for Laravel.
-Laravel `^9.7` is required to use this package.
+A bunch of value objects for Temida.io
 
 ## Installation
 
 You can install the package via composer:
 
 ```bash
-composer require olsza/laravel-value-objects
+composer require temidaio/value-objects
 ```
-
-## Available Value Objects
-- [TaxNumber](https://github.com/olsza/laravel-value-objects/blob/main/src/Complex/TaxNumber.php)
-- [Uuid](https://github.com/olsza/laravel-value-objects/blob/main/src/Complex/Uuid.php)
 
 ## Usage
 
-See the examples [here](https://github.com/olsza/laravel-value-objects/blob/main/docs/examples.md).
+See the [src](https://github.com/olsza/laravel-value-objects/blob/main/src).
 
 ## Testing
 

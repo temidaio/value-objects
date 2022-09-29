@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Olsza\ValueObjects\Custom\Street;
+use Temidaio\ValueObjects\Street;
 
 test('all street data provided returning full street address', function () {
     $data = new Street([
@@ -72,7 +72,7 @@ test('all properties individually retrieved and returned as string', function ()
     expect($data->local)->toEqual('37');
 });
 
-test('set different values individually to each property, returning set values', function () {
+test('street object is immutable', function () {
     $data = new Street([
         'prefix' => '',
         'street' => 's',
@@ -81,12 +81,5 @@ test('set different values individually to each property, returning set values',
     ]);
 
     $data->prefix = 'ul.';
-    $data->street = 'ulica';
-    $data->number = '21';
-    $data->local  = '37';
-
-    expect($data->{'prefix'})->toEqual('ul.');
-    expect($data->{'street'})->toEqual('ulica');
-    expect($data->{'number'})->toEqual('21');
-    expect($data->{'local'})->toEqual('37');
-});
+    dd($data);
+})->expectException(\InvalidArgumentException::class);

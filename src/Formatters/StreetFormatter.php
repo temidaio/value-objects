@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-namespace Olsza\ValueObjects\Formatters;
+namespace Temidaio\ValueObjects\Formatters;
 
 use Illuminate\Support\Str;
 use MichaelRubel\Formatters\Formatter;

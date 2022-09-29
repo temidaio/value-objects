@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Olsza\ValueObjects\Formatters\StreetFormatter;
+use Temidaio\ValueObjects\Formatters\StreetFormatter;
 
 test('all street data provided returning street address', function () {
     $data = format(StreetFormatter::class, [

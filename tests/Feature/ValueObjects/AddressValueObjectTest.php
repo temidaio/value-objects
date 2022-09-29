@@ -2,11 +2,11 @@
 
 declare(strict_types = 1);
 
-use Olsza\ValueObjects\Custom\Address;
-use Olsza\ValueObjects\Custom\City;
-use Olsza\ValueObjects\Custom\Country;
-use Olsza\ValueObjects\Custom\PostCode;
-use Olsza\ValueObjects\Custom\Street;
+use Temidaio\ValueObjects\Address;
+use Temidaio\ValueObjects\City;
+use Temidaio\ValueObjects\Country;
+use Temidaio\ValueObjects\PostCode;
+use Temidaio\ValueObjects\Street;
 
 $street = new Street([
     'prefix' => 'ul.',
@@ -186,12 +186,10 @@ test('providing country returning partial address', function() use ($country) {
     expect($data->getFullAddress())->toEqual('Pl');
 });
 
-test('can set property individually', function() use ($street, $postcode, $city, $country) {
+test('address object is immutable', function() use ($street, $postcode, $city, $country) {
     $data = new Address([
         'postcode' => (string) $postcode,
     ]);
 
     $data->postcode = new PostCode(['postcode' => '69-1337']);
-
-    expect($data->getFullAddress())->toEqual('69-1337');
-});
+})->expectException(\InvalidArgumentException::class);

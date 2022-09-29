@@ -2,23 +2,23 @@
 
 declare(strict_types=1);
 
-namespace Olsza\ValueObjects\Custom;
+namespace Temidaio\ValueObjects;
 
 use Illuminate\Support\Str;
-use Olsza\ValueObjects\Formatters\StreetFormatter;
-use Olsza\ValueObjects\ValueObject;
+use MichaelRubel\ValueObjects\ValueObject;
+use Temidaio\ValueObjects\Formatters\StreetFormatter;
 
-class Street implements ValueObject
+class Street extends ValueObject
 {
     /**
      * Internal properties.
      *
      * @var string|null
      */
-    public ?string $prefix = null;
-    public ?string $street = null;
-    public ?string $number = null;
-    public ?string $local  = null;
+    protected ?string $prefix = null;
+    protected ?string $street = null;
+    protected ?string $number = null;
+    protected ?string $local  = null;
 
     /**
      * @param array|null $data
@@ -32,15 +32,11 @@ class Street implements ValueObject
     }
 
     /**
-     * Make the new Value Object.
-     *
-     * @param array|null $data
-     *
-     * @return static
+     * @return string
      */
-    public static function make(?array $data): static
+    public function value(): string
     {
-        return new static($data);
+        return $this->format();
     }
 
     /**
@@ -75,6 +71,6 @@ class Street implements ValueObject
      */
     public function __toString(): string
     {
-        return $this->format();
+        return $this->value();
     }
 }

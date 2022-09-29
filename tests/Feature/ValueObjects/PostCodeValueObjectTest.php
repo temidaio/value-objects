@@ -2,7 +2,7 @@
 
 declare(strict_types = 1);
 
-use Olsza\ValueObjects\Custom\PostCode;
+use Temidaio\ValueObjects\PostCode;
 
 test('all postcode data provided returning as string', function() {
     $data = new PostCode([
@@ -32,7 +32,7 @@ test('postcode data with whitespaces returning as trimmed string', function() {
     expect($data)->toEqual('69-420');
 });
 
-test('set postcode individually, returning set value', function () {
+test('postcode object is immutable', function () {
     $data = new PostCode([
         'postcode'     => '69-420',
         'city'         => 'krk',
@@ -40,6 +40,4 @@ test('set postcode individually, returning set value', function () {
     ]);
 
     $data->postcode = '21-337';
-
-    expect($data->postcode)->toEqual('21-337');
-});
+})->expectException(\InvalidArgumentException::class);

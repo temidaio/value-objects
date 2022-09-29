@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Olsza\ValueObjects\Formatters\AddressFormatter;
+use Temidaio\ValueObjects\Formatters\AddressFormatter;
 
 $street   = 'ul. Street 21/37';
 $country  = 'Poland';

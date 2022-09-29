@@ -1,6 +1,6 @@
 <?php
 
-namespace Olsza\ValueObjects\Tests;
+namespace Temidaio\ValueObjects\Tests;
 
 use Orchestra\Testbench\TestCase as Orchestra;
 

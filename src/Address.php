@@ -2,32 +2,32 @@
 
 declare(strict_types=1);
 
-namespace Olsza\ValueObjects\Custom;
+namespace Temidaio\ValueObjects;
 
-use Olsza\ValueObjects\Formatters\AddressFormatter;
-use Olsza\ValueObjects\ValueObject;
+use MichaelRubel\ValueObjects\ValueObject;
+use Temidaio\ValueObjects\Formatters\AddressFormatter;
 
-class Address implements ValueObject
+class Address extends ValueObject
 {
     /**
      * @var Street
      */
-    public Street $street;
+    protected Street $street;
 
     /**
      * @var PostCode
      */
-    public PostCode $postcode;
+    protected PostCode $postcode;
 
     /**
      * @var City
      */
-    public City $city;
+    protected City $city;
 
     /**
      * @var Country
      */
-    public Country $country;
+    protected Country $country;
 
     /**
      * @param array|null $data
@@ -41,13 +41,11 @@ class Address implements ValueObject
     }
 
     /**
-     * @param array|null $data
-     *
-     * @return static
+     * @return string
      */
-    public static function make(?array $data): static
+    public function value(): string
     {
-        return new static($data);
+        return $this->getFullAddress();
     }
 
     /**
@@ -76,6 +74,6 @@ class Address implements ValueObject
      */
     public function __toString(): string
     {
-        return $this->format();
+        return $this->value();
     }
 }

@@ -12,8 +12,7 @@
 */
 
 use Illuminate\Database\Eloquent\Model;
-use Illuminate\Support\Facades\Http;
-use Olsza\ValueObjects\Tests\TestCase;
+use Temidaio\ValueObjects\Tests\TestCase;
 
 uses(TestCase::class)
     ->in('Feature');
@@ -36,11 +35,3 @@ expect()->extend('toBeOne', function () {
 expect()->extend('toBeModel', function () {
     return $this->toBeInstanceOf(Model::class);
 });
-
-/*
-|--------------------------------------------------------------------------
-| Global test functions
-|--------------------------------------------------------------------------
-*/
-
-//

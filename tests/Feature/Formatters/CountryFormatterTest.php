@@ -2,7 +2,7 @@
 
 declare(strict_types=1);
 
-use Olsza\ValueObjects\Formatters\CountryFormatter;
+use Temidaio\ValueObjects\Formatters\CountryFormatter;
 
 test('providing all data correctly returning country name', function () {
     $data = format(CountryFormatter::class, [
