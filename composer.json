@@ -1,5 +1,5 @@
 {
-    "name": "temidaio/laravel-value-objects",
+    "name": "temidaio/value-objects",
     "description": "Useful values objects for Laravel",
     "keywords": [
         "php",
