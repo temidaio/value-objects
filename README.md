@@ -1,11 +1,13 @@
 # Value Objects
 
-[![Latest Version on Packagist](https://img.shields.io/packagist/v/olsza/laravel-value-objects.svg?style=flat-square)](https://packagist.org/packages/olsza/laravel-value-objects)
-[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/olsza/laravel-value-objects/run-tests?label=tests)](https://github.com/olsza/laravel-value-objects/actions?query=workflow%3Arun-tests+branch%3Amain)
-[![GitHub Code Style Action Status](https://img.shields.io/github/workflow/status/olsza/laravel-value-objects/Check%20&%20fix%20styling?label=code%20style)](https://github.com/olsza/laravel-value-objects/actions?query=workflow%3A"Check+%26+fix+styling"+branch%3Amain)
-[![Total Downloads](https://img.shields.io/packagist/dt/olsza/laravel-value-objects.svg?style=flat-square)](https://packagist.org/packages/olsza/laravel-value-objects)
+[![Latest Version on Packagist](https://img.shields.io/packagist/v/michael-rubel/laravel-package-template.svg?style=flat-square&logo=packagist)](https://packagist.org/packages/michael-rubel/laravel-package-template)
+[![Total Downloads](https://img.shields.io/packagist/dt/michael-rubel/laravel-package-template.svg?style=flat-square&logo=packagist)](https://packagist.org/packages/michael-rubel/laravel-package-template)
+[![Code Quality](https://img.shields.io/scrutinizer/quality/g/michael-rubel/laravel-package-template.svg?style=flat-square&logo=scrutinizer)](https://scrutinizer-ci.com/g/michael-rubel/laravel-package-template/?branch=main)
+[![Code Coverage](https://img.shields.io/scrutinizer/coverage/g/michael-rubel/laravel-package-template.svg?style=flat-square&logo=scrutinizer)](https://scrutinizer-ci.com/g/michael-rubel/laravel-package-template/?branch=main)
+[![GitHub Tests Action Status](https://img.shields.io/github/workflow/status/michael-rubel/laravel-package-template/run-tests/main?style=flat-square&label=tests&logo=github)](https://github.com/michael-rubel/laravel-package-template/actions)
+[![PHPStan](https://img.shields.io/github/workflow/status/michael-rubel/laravel-package-template/phpstan/main?style=flat-square&label=larastan&logo=laravel)](https://github.com/michael-rubel/laravel-package-template/actions)
 
-A bunch of value objects for Temida.io
+A bunch of value objects for `temida.io`
 
 ## Installation
 
@@ -15,19 +17,11 @@ You can install the package via composer:
 composer require temidaio/value-objects
 ```
 
-## Usage
-
-See the [src](https://github.com/olsza/laravel-value-objects/blob/main/src).
-
 ## Testing
 
 ```bash
 composer test
 ```
-
-## Changelog
-
-Please see [CHANGELOG](CHANGELOG.md) for more information on what has changed recently.
 
 ## Credits
 
