@@ -17,7 +17,7 @@
         "laravel/pint": "^1.2",
         "mockery/mockery": "^1.4.4",
         "nunomaduro/collision": "^6.0",
-        "nunomaduro/larastan": "^1.0",
+        "nunomaduro/larastan": "^2.0",
         "orchestra/testbench": "^7.4",
         "pestphp/pest": "^1.16",
         "pestphp/pest-plugin-global-assertions": "^1.0",
