@@ -2,13 +2,9 @@
     "name": "temidaio/laravel-value-objects",
     "description": "Useful values objects for Laravel",
     "keywords": [
-        "olsza",
         "php",
-        "value object",
-        "value objects",
-        "values object",
-        "values objects",
-        "laravel"
+        "laravel",
+        "value objects"
     ],
     "type": "project",
     "require": {
