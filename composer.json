@@ -11,7 +11,7 @@
         "php": "^8.0|^8.1",
         "illuminate/support": "^9.7",
         "michael-rubel/laravel-formatters": "^6.2",
-        "michael-rubel/laravel-value-objects": "^2.0"
+        "michael-rubel/laravel-value-objects": "^2.0|^3.0"
     },
     "require-dev": {
         "laravel/pint": "^1.2",
