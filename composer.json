@@ -8,10 +8,10 @@
     ],
     "type": "project",
     "require": {
-        "php": "^8.0",
-        "illuminate/support": "^9.33",
-        "michael-rubel/laravel-formatters": "^7.0.5",
-        "michael-rubel/laravel-value-objects": "^5.0"
+        "php": "^8.1",
+        "illuminate/support": "^9.33|^10.0",
+        "michael-rubel/laravel-formatters": "^7.0.6",
+        "michael-rubel/laravel-value-objects": "^5.0.1"
     },
     "require-dev": {
         "laravel/pint": "^1.2",
